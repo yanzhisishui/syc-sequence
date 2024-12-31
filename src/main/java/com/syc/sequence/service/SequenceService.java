@@ -82,7 +82,7 @@ public class SequenceService {
         }
         sequence.setCurrValue(value + count + allocateSize); // nextValue
         sequenceMapper.updateById(sequence);
-        //原来的 value + 1
+        // currValue 大于 allocateMaps 一个号段值
         allocateMaps.put(sequenceType, value + count);
         incrementMaps.put(sequenceType, new AtomicLong(0));
         return seqValue;
